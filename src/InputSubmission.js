@@ -4,16 +4,30 @@ class InputSubmission extends Component {
   constructor(){
     super();
 
-    this.state = { title: '' };
+    this.state = { title: '', body: ''};
+  }
+
+  handleClick() {
+    console.log('win');
+    this.setState({title: '', body: ''});
   }
   render(){
     return(
-      <div>
+      <div className='InputSubmissionForm'>
       <input
       type='text'
       placeholder='ReactIdeas'
       value={ this.state.title }
-      onChange={ someFunction() }/>
+      onChange={ ( event ) => this.setState({ title: event.target.value }) }
+      /><br/>
+
+      <textarea
+      placeholder='ReactBox Body'
+      value={ this.state.body }
+      onChange={ (event) => this.setState({body: event.target.value}) }
+      /><br/>
+
+      <button onClick={ () => this.handleClick() } >Submit</button>
       </div>
     );
   }
