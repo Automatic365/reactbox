@@ -9,11 +9,15 @@ class App extends Component {
     this.state = { ideas: [] };
   }
 
-  
+  addIdea(idea){
+    this.state.ideas.push( idea );
+    this.setState( { ideas: this.state.ideas } );
+  }
+
   render() {
     return (
       <div>
-      <InputSubmission /><br/>
+      <InputSubmission sendIdea={ this.addIdea.bind(this) } /><br/>
       </div>
     );
   }

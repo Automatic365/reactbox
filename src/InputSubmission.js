@@ -8,7 +8,7 @@ class InputSubmission extends Component {
   }
 
   handleClick() {
-    console.log('win');
+    this.props.sendIdea( Object.assign(this.state, {id: Date.now()}) )
     this.setState({title: '', body: ''});
   }
   render(){
