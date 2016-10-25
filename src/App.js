@@ -10,8 +10,15 @@ class App extends Component {
     this.state = { ideas: [] };
   }
 
+  componentDidMount() {
+    let ideasFromStorage = localStorage.getItem('ideas');
+    ideasFromStorage = JSON.parse(ideasFromStorage);
+    this.setState({ideas: ideasFromStorage ? ideasFromStorage : []});
+  }
+
   addIdea(idea){
     this.state.ideas.push( idea );
+    localStorage.setItem('ideas', JSON.stringify(this.state.ideas))
     this.setState( { ideas: this.state.ideas } );
   }
 

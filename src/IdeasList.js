@@ -10,9 +10,14 @@ const IdeasList = ({ideas}) => {
 
 const Idea = ( {title, body, id} ) => {
   return(
-    <div>
+    <div id={id} className='idea' {
+      constructor() {
+
+      }
+    }>
     <h1>{title} - {id}</h1>
     <h1>{body}</h1>
+    <button onClick={} >Delete</button>
     </div>
   )
 }

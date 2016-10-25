@@ -51,3 +51,7 @@ table {
   text-align: center;
   margin-top: 50%;
 }
+
+.ideas {
+  border: 2px solid mediumaquamarine;
+}
