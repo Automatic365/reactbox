@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import InputSubmission from './InputSubmission'
+import IdeasList from './IdeasList'
 
 class App extends Component {
   constructor(){
@@ -15,9 +16,13 @@ class App extends Component {
   }
 
   render() {
+    let ideasList = this.state.ideas;
+
     return (
       <div>
       <InputSubmission sendIdea={ this.addIdea.bind(this) } /><br/>
+
+      <IdeasList ideas={ this.state.ideas } />
       </div>
     );
   }
